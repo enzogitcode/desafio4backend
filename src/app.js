@@ -8,6 +8,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const exphbs = require("express-handlebars")
+const socket = require ("socket.io")
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars')
 app.set("views", './src/views')
@@ -19,8 +20,8 @@ app.get("/", (req, res) => {
         apellido: "winky"
 
     }
-    const arrayProductos= ""
-    res.render('index', {usuario, arrayProductos, titulo: "platillita"})
+    
+    res.render('index', {usuario, titulo: "Mi E-commerce"})
 })
 app.get("/contacto", (req, res) => {
     res.render("contacto")
