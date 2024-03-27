@@ -1,7 +1,7 @@
 const express= require ('express')
 const cartsRouter = express.Router();
-const CartManager= require ('./controllers/cart-manager.js')
-const cartManager = new CartManager('./src/models/carts.json');
+const CartManager= require ('../controllers/cart-manager.js')
+const cartManager = new CartManager('../models/carts.json');
 
 cartsRouter.post("/carts", async (req, res) => {
     try {
@@ -40,4 +40,4 @@ cartsRouter.post("/carts/:cid/product/:pid", async (req, res) => {
 })
 
 
-modules.exports= cartsRouter;
+module.exports= cartsRouter;
