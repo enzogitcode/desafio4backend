@@ -33,7 +33,7 @@ io.on("connection", async (socket) => {
     console.log("un cliente conectado")
 })
 io.on("connection", async (socket) => {
-    console.log("Un cliente conectado");
+    console.log("Cliente conectado");
 
     socket.emit("productos", await productManager.getProducts());
 
